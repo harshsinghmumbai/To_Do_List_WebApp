@@ -24,7 +24,6 @@ const Edit_Topic = ({ id, title, description, Status }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ newTitle, newDescription, NewStatus }),
-          mode: "no-cors", // Add this line for no-cors mode
         }
       );
 
