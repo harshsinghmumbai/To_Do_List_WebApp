@@ -14,6 +14,7 @@ const RemoveBtn = ({ id }) => {
         `${process.env.NEXT_PUBLIC_URL}/api/topics?id=${id}`,
         {
           method: "DELETE",
+          mode: "no-cors", // Add this line for no-cors mode
         }
       );
       if (res.ok) {
@@ -22,10 +23,11 @@ const RemoveBtn = ({ id }) => {
       }
     }
   };
+
   return (
     <>
       <Trash
-        className="w-4 h-4 md:w-5 md:h-5 cursor-pointer "
+        className="w-4 h-4 md:w-5 md:h-5 cursor-pointer"
         onClick={removeTopic}
       />
     </>

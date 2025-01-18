@@ -11,6 +11,7 @@ const getTopic = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/topics`, {
       cache: "no-store", // Get live data from database
+      mode: "no-cors", // Add this line to use no-cors mode
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");

@@ -4,6 +4,7 @@ const getTopicById = async (id) => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/topics/${id}`, {
       cache: "no-store", // get me live data from database
+      mode: "no-cors", // Add this line for no-cors mode
     });
 
     if (!res.ok) {

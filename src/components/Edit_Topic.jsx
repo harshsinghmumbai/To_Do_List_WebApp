@@ -24,6 +24,7 @@ const Edit_Topic = ({ id, title, description, Status }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ newTitle, newDescription, NewStatus }),
+          mode: "no-cors", // Add this line for no-cors mode
         }
       );
 
@@ -36,6 +37,7 @@ const Edit_Topic = ({ id, title, description, Status }) => {
       console.log("Error on Edit Topic file component", error);
     }
   };
+
   return (
     <>
       <div className="w-[95%] m-auto my-6">

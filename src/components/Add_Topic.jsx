@@ -25,6 +25,7 @@ const Add_Topic = () => {
           "Content-type": "application/json",
         },
         body: JSON.stringify({ title, description, Status }),
+        mode: "no-cors", // Add this line for no-cors mode
       });
 
       if (res.ok) {
