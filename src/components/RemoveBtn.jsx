@@ -14,7 +14,6 @@ const RemoveBtn = ({ id }) => {
         `${process.env.NEXT_PUBLIC_URL}/api/topics?id=${id}`,
         {
           method: "DELETE",
-          mode: "no-cors", // Add this line for no-cors mode
         }
       );
       if (res.ok) {
