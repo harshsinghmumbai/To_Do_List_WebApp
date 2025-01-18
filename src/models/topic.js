@@ -4,11 +4,15 @@ const topicSchema = new Schema(
   {
     title: {
       type: String,
-      // required: true,
+      required: true,
     },
     description: {
       type: String,
-      // required: true,
+      required: true,
+    },
+    Status: {
+      type: String,
+      required: true,
     },
   },
   {

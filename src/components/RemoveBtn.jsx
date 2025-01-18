@@ -1,7 +1,7 @@
 "use client";
-import { HiOutlineTrash } from "react-icons/hi";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { Trash } from "lucide-react";
 
 const RemoveBtn = ({ id }) => {
   const router = useRouter();
@@ -10,19 +10,24 @@ const RemoveBtn = ({ id }) => {
     const confirmed = confirm("Are you sure you want to remove");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_URL}/api/topics?id=${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
+        router.push("/");
         router.refresh();
       }
     }
   };
   return (
     <>
-      <Button onClick={removeTopic} variant="destructive" size="sm">
-        <HiOutlineTrash size={20} />
-      </Button>
+      <Trash
+        className="w-4 h-4 md:w-5 md:h-5 cursor-pointer "
+        onClick={removeTopic}
+      />
     </>
   );
 };
